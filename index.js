@@ -18,7 +18,7 @@ const Game = {
       let tempLetter = "";
       this.letters.forEach((elem) => {
          tempLetter += elem.toHide() + " ";
-      })
+      });
       return console.log(tempLetter);
    },
 
@@ -61,7 +61,10 @@ const Game = {
       Inquirer.prompt([{
          type: "input",
          message: "Guess a letter in word",
-         name: "usr_guess"
+         name: "usr_guess",
+         filter: (value) => {
+            return value.toLowerCase();
+         }
       }]).then((data) => {
          let guessed = 0,
             tempLetter = "";

@@ -1,8 +1,5 @@
 // the word will process validation
 // by passing specific value when match special characters, such as , . \s etc...
-
-const Letter = require("./letter.js");
-
 class Word {
    constructor(name) {
       this.name = name;
@@ -10,18 +7,25 @@ class Word {
    }
 }
 
-// Word.prototype.consoleMyWord = function() {
-//    return console.log(this.name.toUpperCase());
-// }
-
 Word.prototype.splitWordtoArr = function() {
-	this.letters = this.name.split("");
+   this.letters = this.name.split("");
+   this.validateAlphabet();
 }
 
 Word.prototype.createLookUp = function() {
-	this.letters.forEach((elem) => {
-		this.unguessed[elem] = true;
-	})
+   this.letters.forEach((elem) => {
+      if (elem !== "SPACE") {
+      	this.unguessed[elem] = true;
+      }
+   });
+}
+
+Word.prototype.validateAlphabet = function() {
+   this.letters.find((elem, index, array) => {
+      if (elem.match(/\s/)) {
+         array[index] = "SPACE";
+      }
+   });
 }
 
 module.exports = Word;
