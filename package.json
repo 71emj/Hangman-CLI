@@ -1,0 +1,23 @@
+{
+  "name": "hangman-cli",
+  "version": "1.0.0",
+  "description": "Recreating my hangman game with cmmand line interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/71emj/Hangman-CLI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/71emj/Hangman-CLI/issues"
+  },
+  "homepage": "https://github.com/71emj/Hangman-CLI#readme",
+  "dependencies": {
+    "inquirer": "^4.0.1",
+    "prompt": "^1.0.0"
+  }
+}
