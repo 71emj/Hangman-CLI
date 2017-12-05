@@ -1,6 +1,4 @@
 const Request = require("request"),
-   Inquirer = require("inquirer"),
-   Promise = require("es6-promise"),
    File = require("fs");
 
 class Dictionary {

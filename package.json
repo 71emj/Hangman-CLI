@@ -4,7 +4,8 @@
   "description": "Recreating my hangman game with cmmand line interface",
   "main": "index.js",
   "scripts": {
-    "test": "echo "
+    "start": "node index.js",
+    "test": "echo \"Everything seems to be up and running\""
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,6 @@
   },
   "homepage": "https://github.com/71emj/Hangman-CLI#readme",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "es6-promise": "^4.1.1",
     "inquirer": "^4.0.1",
     "prompt": "^1.0.0",
     "request": "^2.83.0"

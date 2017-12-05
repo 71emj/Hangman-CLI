@@ -1,7 +1,6 @@
 // importing packages
 const Inquirer = require("inquirer"),
    File = require("fs"),
-   Promise = require("es6-promise"),
    Word = require("./word.js"),
    Letter = require("./letter.js"),
    Dictionary = require("./word_lib.js");
