@@ -55,11 +55,13 @@ const Game = {
       console.log("Hello, welcome to a game of hangman, the theme for today is the top 1000 most popular movie of all time.");
       console.log("Well, have fun!!");
       this.dictionary = new Dictionary(require("./key.js"));
-      this.dictionary.downloadLib(this.random());
-      File.readFile("./dictionary.txt", "utf8", (err, data) => {
-         this.wordDict = JSON.parse(data);
-         this.shuffle(this.wordDict);
-         this.GameSet();
+      this.dictionary.downloadLib(this.random()).then((msg) => {
+         // console.log(msg);
+         File.readFile("./dictionary.txt", "utf8", (err, data) => {
+            this.wordDict = JSON.parse(data);
+            this.shuffle(this.wordDict);
+            this.GameSet();
+         });
       });
    },
 
