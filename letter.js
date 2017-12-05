@@ -4,21 +4,21 @@ class Letter {
    constructor(name) {
       this.name = name;
    }
+}
 
-   toHide() {
-   	if (this.name.length > 1) {
-   		return " ";
-   	}
-      return "_";
-   }
-
-   toShow() {
-   	if (this.name === "SPACE") {
-   		return " ";
-   	}
-   	this.toHide = () => { return this.name };
+Letter.prototype.toHide = function() {
+   if (this.name.match(/[^a-z]/i)) {
       return this.name;
    }
-}
+   return "_";
+};
+
+Letter.prototype.toShow = function() {
+   if (this.name.match(/[^a-z]/i)) {
+      return this.name;
+   }
+   this.toHide = () => { return this.name };
+   return this.name;
+};
 
 module.exports = Letter;

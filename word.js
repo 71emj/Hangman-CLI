@@ -4,28 +4,28 @@ class Word {
    constructor(name) {
       this.name = name;
       this.unguessed = {};
+      this.letters = [];
    }
 }
 
 Word.prototype.splitWordtoArr = function() {
    this.letters = this.name.split("");
-   this.validateAlphabet();
 }
 
 Word.prototype.createLookUp = function() {
    this.letters.forEach((elem) => {
-      if (elem !== "SPACE") {
+      if (elem.match(/[a-z]/i) && elem.length === 1) {
       	this.unguessed[elem] = true;
       }
    });
 }
 
-Word.prototype.validateAlphabet = function() {
-   this.letters.find((elem, index, array) => {
-      if (elem.match(/\s/)) {
-         array[index] = "SPACE";
-      }
-   });
-}
+// Word.prototype.validateAlphabet = function() {
+//    this.letters.find((elem, index, array) => {
+//       if (elem.match(/\s/)) {
+//          array[index] = "SPACE";
+//       }
+//    });
+// }
 
 module.exports = Word;
